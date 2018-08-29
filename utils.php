@@ -26,5 +26,7 @@ function addRegistro(string $tipo, array $registro){
     $registro['id'] = count($registros)+1;
 
     $registros[] = $registro;
+    
+    file_put_contents($database_file, json_encode($registros)); #isso resolve o problema que eu tava tendo de não criar o arquivo :p
 
 }
